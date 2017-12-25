@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
-
+//apply plugin: 'com.neenbedankt.android-apt'
 android {
     compileSdkVersion 25
-    buildToolsVersion "26.0.1"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.example.yyh.newapplication"
         minSdkVersion 15
@@ -20,16 +20,41 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.4.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     //向右滑动返回上一页
     compile 'com.r0adkll:slidableactivity:2.0.5'
     //dialog的依赖
     compile 'com.github.yilylong:CBDialog:v1.0.2'
+    //配置butterknife
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    //SwitchButton 开关button
+    compile 'com.github.zcweng:switch-button:0.0.3@aar'
+    //Android 高仿 IOS 滚轮选择控件
+    compile 'com.weigan:loopView:0.1.2'
+    //这是一款仿iOS的PickerView控件，有时间选择和选项选择，并支持一二三级联动，支持自定义样式，3.x新版本的详细特性如下
+    compile 'com.contrarywind:Android-PickerView:3.2.6'
+    //版本检测更新
+    compile 'com.allenliu.versionchecklib:library:1.7.2'
+    //网络请求框架
+    implementation project(':common')
+    //刷新框架
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+    //好看的框架
+    compile 'com.github.vondear:RxTools:v1.7.6'
+    //
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    // RxAndroid
+    compile 'io.reactivex:rxandroid:1.2.1'
+    // RxJava
+    compile 'io.reactivex:rxjava:1.2.4'
 
 }
